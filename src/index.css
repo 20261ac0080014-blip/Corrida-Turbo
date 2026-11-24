@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Outfit", system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: #07070b;
+    color: #f8fafc;
+    color-scheme: dark;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+.racing-curbs {
+  background-image: repeating-linear-gradient(
+    90deg,
+    #dc2626 0px,
+    #dc2626 16px,
+    #f8fafc 16px,
+    #f8fafc 32px
+  );
+}
+
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #09090b !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-certificate {
+    border: 3px solid #ca8a04 !important;
+    background: #ffffff !important;
+    color: #09090b !important;
+    box-shadow: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
